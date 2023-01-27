@@ -4,3 +4,5 @@
 !*.tex
 !*.cls
 !*.pdf
+!Makefile
+!*.md
