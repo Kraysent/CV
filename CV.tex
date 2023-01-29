@@ -4,69 +4,94 @@
 \usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry}
 \name{Artyom Zaporozhets}
 \newcommand{\link}[2]{\href{#1}{\textcolor{blue}{\underline{#2}}}}
+\newcommand{\subheader}[1]{\textbf{\textit{#1}}}
+\newcommand{\timestamp}[1]{\hfill {\small \textbf{#1}}}
+\newcommand{\datedsubheader}[2]{\textbf{\textit{#1}} \timestamp{#2}}
+\newcommand{\longversion}[1]{
+\ifdefined\LONG
+	#1
+\fi
+}
+\newcommand{\note}[1]{\textcolor{gray}{#1}}
 
 \begin{document}
 	\textit{Junior backend developer @ Yandex N.V.} \\
 	\textit{Student @ MSU Sternberg astronomical institute, Moscow} 
-	\ifdefined\LONG
-		\\ Long mode!
-	\fi
-
-	\begin{rSection}{Contacts}
-		\textbf{Email: } zaporozhetc.aa19@physics.msu.ru
-		\\ \textbf{GitHub: } \link{https://github.com/Kraysent}{https://github.com/Kraysent}
-	\end{rSection}		
 
 	\begin{rSection}{General}
-		\textbf{Date of birth:} November 16, 2001
-		\\ \textbf{Citizenship:} Russia
-		\\ \textbf{Place of residence:} Russia, Moscow
-	\end{rSection}
+		\begin{tabular}{@{} >{\bfseries}l @{\hspace{6ex}} l }
+			Email & zaporozhetc.aa19@physics.msu.ru \\
+			GitHub & \link{https://github.com/Kraysent}{@Kraysent} \\
+			Telegram & \link{https://t.me/kraysent}{@kraysent}
+		\end{tabular}
+
+		\begin{tabular}{@{} >{\bfseries}l @{\hspace{6ex}} l }
+			Born & November 16, 2001 (21 y.o.) \\
+			Citizenship & Russia \\
+			Place of residence & Russia, Moscow
+		\end{tabular}
+	\end{rSection}		
 
 	\begin{rSection}{Education}
-		\textbf{Lomonosov Moscow State University} \hfill \textit{September 2019 - May 2025 (expected)}
+		\datedsubheader{Lomonosov Moscow State University}{September 2019 - May 2025 (expected)}
 		\\ Master of Science
 		\\ Physics Faculty, Department of Astronomy
+		\\ Sternberg astronomical institute
 
-		\textbf{Traektoria School of Astrophysics} \hfill \textit{August 2016 - August 2019}
+		\datedsubheader{Traektoria School of Astrophysics}{August 2016 - August 2019}
 
-		\textbf{33 Lyceum, Rostov-on-Don} \hfill \textit{September 2008 - June 2019}
-		\\ In-depth study of mathematics \& physics
+		\datedsubheader{33 Lyceum, Rostov-on-Don}{September 2008 - June 2019}
+		\longversion{
+			\\ \note{In-depth study of mathematics \& physics}
+		}
 	\end{rSection}
 	
 	\begin{rSection}{Work experience}
-		$\bullet$ Yandex N.V., FinOps division, billing systems \hfill \textit{since December 2021}
-		\begin{itemize}
-			\item Junior Python/Go backend developer \hfill \textit{since June 2022}
-			\item Intern Python/Go backend developer \hfill \textit{December 2021 - June 2022}
-		\end{itemize}
-    \end{rSection}
-    
-    \begin{rSection}{Science}
-		\textit{Publication:}
-		\\ $\bullet$ Random Sky Radio Sources \link{http://www.sao.ru/Doc-k8/Science/Public/Bulletin/Vol74/N3/ASPB265.pdf}{(Russian)} \hfill \textit{2019}
-		\\ A.A.Zaporozhets, O.V.Verkhodanov, Astrophysical Bulletin, vol. 74, p. 265
+		\subheader{Yandex N.V., FinOps division, billing systems} \timestamp{since December 2021}
+		\\ $\bullet$ Junior Python/Go backend developer \timestamp{since June 2022}
+		\\ $\bullet$ Intern Python/Go backend developer \timestamp{December 2021 - June 2022}
 
-		\textit{Programming projects:}
-		\\ $\bullet$ \link{https://github.com/Kraysent/OMTool}{Galaxy evolution modeling tool}, Python \hfill \textit{since June 2021}
-		\\ $\bullet$ \link{https://github.com/Kraysent/XBodyModel}{Numerical model of N-body task}, Rust \hfill \textit{2020}
-		\\ $\bullet$ \link{https://github.com/Kraysent/Gravity-Model}{Numerical model of N-body task}, C\# \hfill \textit{2019}
-	\end{rSection}
+		\longversion{
+			\note{Developed payment processing system on microservices. Worked with AWS SQS, Docker, Yandex's internal deployment, continuous integration, version control, monitoring and task tracking systems.}
+		}
+    \end{rSection}
 	
 	\begin{rSection}{Interests and Skills}
 		\begin{tabular}{@{} >{\bfseries}l @{\hspace{6ex}} l }
-			Programming & Go, Python (numpy, matplotlib, astropy), C++, C\#\\
-			Software & LaTeX, Git, Docker \\
-			Languages & English (fluent), Russian (fluent)
+			Natural languages & fluent in English and Russian \\
+			Programming languages & Go, Python (numpy, matplotlib, astropy), C++\\
+			Software & LaTeX, Git, Docker, Unix, AWS SQS
 		\end{tabular}
 
-		\textit{Language Exam Results:}
-		\\ $\bullet$ First Cambridge English, 165, Grade C \hfill \textit{2019}
+		\subheader{Language Exam Results}
+		\\ $\bullet$ First Cambridge English, 165, Grade C \timestamp{2019}
 		
-		\textit{Online courses:}
-		\\ $\bullet$ Machine learning in applied tasks \textit{from MSU}. \hfill \textit{September - December 2022}
-		\\ $\bullet$ \link{https://coursera.org/share/d2d0be1f1b9f3e71fc36ca28fb12976f}{Version control with Git} \textit{from Atlassian} \hfill \textit{May 2020}
-		\\ $\bullet$ The skill of development in modern C++ \textit{from MIPT \& Yandex}. \hfill \textit{January - March 2020}
-		\\ \link{https://coursera.org/share/9ae4ca0b1b59871cd100cd8ffb3d181d}{White belt}, \link{https://coursera.org/share/ef873d3813da5cd7eed359eb3126222e}{Yellow belt} 
+		\subheader{Online courses}
+		\\ $\bullet$ Machine learning in applied tasks \textit{from MSU}. \timestamp{September - December 2022}
+		\\ $\bullet$ \link{https://coursera.org/share/d2d0be1f1b9f3e71fc36ca28fb12976f}{Version control with Git} \textit{from Atlassian} \timestamp{May 2020}
+		\\ $\bullet$ The skill of development in modern C++ \textit{from MIPT \& Yandex}. \timestamp{January - March 2020}
+		\\ \note{\link{https://coursera.org/share/9ae4ca0b1b59871cd100cd8ffb3d181d}{White belt}, \link{https://coursera.org/share/ef873d3813da5cd7eed359eb3126222e}{Yellow belt}}
+	\end{rSection}
+
+	\begin{rSection}{Science}
+		\subheader{Publication}
+		\\ $\bullet$ Random Sky Radio Sources, A.A.Zaporozhets, O.V.Verkhodanov \timestamp{2019}
+		\\ \note{Astrophysical Bulletin, vol. 74, p. 265 (\link{http://www.sao.ru/Doc-k8/Science/Public/Bulletin/Vol74/N3/ASPB265.pdf}{Russian version})}
+
+		\subheader{Programming projects}
+		\\ $\bullet$ \link{https://github.com/Kraysent/OMTool}{Galaxy evolution modeling tool}, Python \timestamp{since June 2021}
+		\\ $\bullet$ \link{https://github.com/Kraysent/XBodyModel}{Numerical model of N-body task}, Rust \timestamp{2020}
+		\\ $\bullet$ \link{https://github.com/Kraysent/Gravity-Model}{Numerical model of N-body task}, C\# \timestamp{2019}
+
+		\longversion{
+			\subheader{Conferences}
+			% TODO: add link here
+			\\ $\bullet$ Physics of Space 2023, Ekaterinburg \timestamp{January - February 2023}
+			% TODO: add link here
+			\\ \note{Presentation}
+			\\ $\bullet$ High Energy Astrophysics today and tomorrow 2022, Moscow \timestamp{December 2022}
+			% TODO: add link here
+			\\ \note{Poster}
+		}
 	\end{rSection}
 \end{document}

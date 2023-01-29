@@ -1,3 +1,16 @@
 Source code if my CV.
 
-Compiled versions are cv.pdf (shorter version) and resume.pdf (longer one).
+To compile just use 
+
+```bash
+make
+```
+
+which will produce both longer (`cv.pdf`) and shorter versions (`resume.pdf`).
+
+To compile them separately use 
+
+```bash
+make short
+make long
+```
