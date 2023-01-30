@@ -1,4 +1,4 @@
-Source code if my CV.
+Source code of my CV.
 
 To compile just use 
 
