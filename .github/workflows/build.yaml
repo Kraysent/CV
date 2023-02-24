@@ -16,10 +16,13 @@ jobs:
       - name: Upload resume
         uses: actions/upload-artifact@v3
         with:
-          name: PDF
+          name: resume.pdf
           path: resume.pdf
       - name: Upload CV
         uses: actions/upload-artifact@v3
         with:
-          name: PDF
+          name: cv.pdf
           path: cv.pdf
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "cv.pdf,resume.pdf"
