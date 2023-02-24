@@ -16,12 +16,12 @@ jobs:
       - name: Upload resume
         uses: actions/upload-artifact@v3
         with:
-          name: release
+          name: build
           path: resume.pdf
       - name: Upload CV
         uses: actions/upload-artifact@v3
         with:
-          name: release
+          name: build
           path: cv.pdf
   release:
     runs-on: ubuntu-latest
@@ -38,4 +38,4 @@ jobs:
         with:
           tag: ${{ steps.tag_version.outputs.new_tag }}
           name: Release ${{ steps.tag_version.outputs.new_tag }}
-          artifacts: "release/cv.pdf,release/resume.pdf"
+          artifacts: "build/*.pdf"

@@ -14,3 +14,5 @@ To compile them separately use
 make short
 make long
 ```
+
+You can also simply download compiled files from "Releases" pages of this repo.
