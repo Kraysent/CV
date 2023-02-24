@@ -3,19 +3,16 @@ on: [push]
 jobs:
   build_latex:
     runs-on: ubuntu-latest
+    container: "blang/latex"
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v3
-      - name: Compile resume
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: CV.tex
-          args: --jobname=resume
-      - name: Compile CV
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: CV.tex
-          args: --jobname=cv '\newcommand*{\LONG}{} \input{CV}'
+      - name: Build CV
+        run: |
+           make short
+      - name: Build resume
+        run: |
+          build long
       - name: Upload resume
         uses: actions/upload-artifact@v3
         with:
