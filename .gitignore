@@ -1,7 +1,5 @@
-*
-
-!.gitignore
-!*.tex
-!*.cls
-!Makefile
-!*.md
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
