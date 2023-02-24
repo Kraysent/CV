@@ -15,4 +15,4 @@ make short
 make long
 ```
 
-You can also simply download compiled files from "Releases" pages of this repo.
+You can also simply download compiled files from "Releases" page of this repo.
