@@ -2,7 +2,8 @@
 \usepackage[unicode, pdftex]{hyperref}
 \usepackage{xcolor}
 \usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry}
-\name{Artyom Zaporozhets}
+\usepackage{enumitem}
+
 \newcommand{\link}[2]{\href{#1}{\textcolor{blue}{\underline{#2}}}}
 \newcommand{\subheader}[1]{\textbf{\textit{#1}}}
 \newcommand{\timestamp}[1]{\hfill {\small \textbf{#1}}}
@@ -13,6 +14,10 @@
 \fi
 }
 \newcommand{\note}[1]{\textcolor{gray}{#1}}
+
+\setlist[itemize]{nosep,topsep=-8pt}
+\name{Artyom Zaporozhets}
+
 
 \begin{document}
 	\textit{Junior backend developer @ Yandex N.V.} \\
@@ -47,51 +52,77 @@
 	\end{rSection}
 	
 	\begin{rSection}{Work experience}
-		\subheader{Yandex N.V., FinOps division, billing systems} \timestamp{since December 2021}
-		\\ $\bullet$ Junior Python/Go backend developer \timestamp{since June 2022}
-		\\ $\bullet$ Intern Python/Go backend developer \timestamp{December 2021 - June 2022}
-
 		\longversion{
 			\note{Developed payment processing system on microservices. Worked with AWS SQS, Docker, Yandex's internal deployment, continuous integration, version control, monitoring and task tracking systems.}
 		}
+
+		\datedsubheader{Yandex N.V., FinOps division, billing systems}{since December 2021}
+		\begin{itemize}
+			\item Junior Python/Go backend developer \timestamp{since June 2022}
+			\item Intern Python/Go backend developer \timestamp{December 2021 - June 2022}
+		\end{itemize}
     \end{rSection}
 	
 	\begin{rSection}{Interests and Skills}
 		\begin{tabular}{@{} >{\bfseries}l @{\hspace{6ex}} l }
 			Natural languages & fluent in English and Russian \\
 			Programming languages & Go, Python (numpy, matplotlib, astropy), C++\\
-			Software & LaTeX, Git, Docker, Unix, AWS SQS
+			Software & LaTeX, Git, GitHub Actions, Docker, Unix, AWS SQS
 		\end{tabular}
 
 		\subheader{Language Exam Results}
-		\\ $\bullet$ First Cambridge English, 165, Grade C \timestamp{2019}
-		
+		\begin{itemize}
+			\item First Cambridge English, 165, Grade C \timestamp{2019}
+		\end{itemize}
+
+		\vspace{1em}
+
 		\subheader{Online courses}
-		\\ $\bullet$ Machine learning in applied tasks \textit{from MSU}. \timestamp{September - December 2022}
-		\\ $\bullet$ \link{https://coursera.org/share/d2d0be1f1b9f3e71fc36ca28fb12976f}{Version control with Git} \textit{from Atlassian} \timestamp{May 2020}
-		\\ $\bullet$ The skill of development in modern C++ \textit{from MIPT \& Yandex}. \timestamp{January - March 2020}
-		\\ \note{\link{https://coursera.org/share/9ae4ca0b1b59871cd100cd8ffb3d181d}{White belt}, \link{https://coursera.org/share/ef873d3813da5cd7eed359eb3126222e}{Yellow belt}}
+		\begin{itemize}
+			\item Machine learning in applied tasks \textit{from MSU}. \timestamp{September - December 2022}
+			\item \link{https://coursera.org/share/d2d0be1f1b9f3e71fc36ca28fb12976f}{Version control with Git} \textit{from Atlassian} \timestamp{May 2020}
+			\item The skill of development in modern C++ \textit{from MIPT \& Yandex}. \timestamp{January - March 2020}
+
+			\link{https://coursera.org/share/9ae4ca0b1b59871cd100cd8ffb3d181d}{White belt}, \link{https://coursera.org/share/ef873d3813da5cd7eed359eb3126222e}{Yellow belt}
+		\end{itemize}
 	\end{rSection}
 
 	\begin{rSection}{Science}
+		\longversion{
+			\note{
+				Worked with different scientific Python packages such as numpy, scipy, matplotlib, pandas and astropy. 
+				Have a lot of experience with LaTeX and Unix.
+			}
+		}
+
 		\subheader{Publication}
-		\\ $\bullet$ Random Sky Radio Sources, A.A.Zaporozhets, O.V.Verkhodanov \timestamp{2019}
-		\\ \note{Astrophysical Bulletin, vol. 74, p. 265 (\link{http://www.sao.ru/Doc-k8/Science/Public/Bulletin/Vol74/N3/ASPB265.pdf}{Russian version})}
+		\begin{itemize}
+			\item Random Sky Radio Sources, A.A.Zaporozhets, O.V.Verkhodanov \timestamp{2019}
+		
+			Astrophysical Bulletin, vol. 74, p. 265 (\link{http://www.sao.ru/Doc-k8/Science/Public/Bulletin/Vol74/N3/ASPB265.pdf}{Russian version})
+		\end{itemize}
+
+		\vspace{1em}
 
 		\subheader{Programming projects}
-		\\ $\bullet$ \link{https://github.com/Kraysent/OMTool}{Galaxy evolution modeling tool}, Python \timestamp{since June 2021}
-		\\ $\bullet$ \link{https://github.com/Kraysent/XBodyModel}{Numerical model of N-body task}, Rust \timestamp{2020}
-		\\ $\bullet$ \link{https://github.com/Kraysent/Gravity-Model}{Numerical model of N-body task}, C\# \timestamp{2019}
+		\begin{itemize}
+			\item \link{https://github.com/Kraysent/OMTool}{Galaxy evolution modeling tool}, Python \timestamp{since June 2021}
+			\item \link{https://github.com/Kraysent/XBodyModel}{Numerical model of N-body task}, Rust \timestamp{2020}
+			\item \link{https://github.com/Kraysent/Gravity-Model}{Numerical model of N-body task}, C\# \timestamp{2019}
+		\end{itemize}
 
 		\longversion{
+			\vspace{1em}
+
 			\subheader{Conferences}
-			% TODO: add link here
-			\\ $\bullet$ Physics of Space 2023, Ekaterinburg \timestamp{January - February 2023}
-			% TODO: add link here
-			\\ \note{Presentation}
-			\\ $\bullet$ High Energy Astrophysics today and tomorrow 2022, Moscow \timestamp{December 2022}
-			% TODO: add link here
-			\\ \note{Poster}
+			\begin{itemize}
+				\item Physics of Space 2023, Ekaterinburg \timestamp{January - February 2023}
+				
+				Presentation: \link{https://www.overleaf.com/read/mnwwgvkqxdky}{Russian version}
+				\item High Energy Astrophysics today and tomorrow 2022, Moscow \timestamp{December 2022}
+				
+				Poster: \link{https://www.overleaf.com/read/cwyptqpmdtdf}{Russian version}
+			\end{itemize}
 		}
 	\end{rSection}
 \end{document}
