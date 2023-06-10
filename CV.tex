@@ -3,16 +3,13 @@
 \usepackage{xcolor}
 \usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry}
 \usepackage{enumitem}
+\usepackage{courier}
 
 \newcommand{\link}[2]{\href{#1}{\textcolor{blue}{\underline{#2}}}}
 \newcommand{\subheader}[1]{\textbf{\textit{#1}}}
 \newcommand{\timestamp}[1]{\hfill {\small \textbf{#1}}}
 \newcommand{\datedsubheader}[2]{\textbf{\textit{#1}} \timestamp{#2}}
-\newcommand{\longversion}[1]{
-\ifdefined\LONG
-	#1
-\fi
-}
+\newcommand{\longversion}[1]{\ifdefined\LONG#1\fi}
 \newcommand{\note}[1]{\textcolor{gray}{#1}}
 
 \setlist[itemize]{nosep,topsep=-8pt}
@@ -38,14 +35,14 @@
 	\end{rSection}		
 
 	\begin{rSection}{Education}
-		\datedsubheader{Lomonosov Moscow State University}{September 2019 - May 2025 (expected)}
+		\datedsubheader{Lomonosov Moscow State University}{September 2019 --- May 2025 (expected)}
 		\\ Master of Science
 		\\ Physics Faculty, Department of Astronomy
 		\\ Sternberg astronomical institute
 
-		\datedsubheader{Traektoria School of Astrophysics}{August 2016 - August 2019}
+		\datedsubheader{Traektoria School of Astrophysics}{August 2016 --- August 2019}
 
-		\datedsubheader{33 Lyceum, Rostov-on-Don}{September 2008 - June 2019}
+		\datedsubheader{33 Lyceum, Rostov-on-Don}{September 2008 --- June 2019}
 		\longversion{
 			\\ \note{In-depth study of mathematics \& physics}
 		}
@@ -58,15 +55,16 @@
 
 		\datedsubheader{Yandex N.V., FinOps division, billing systems}{since December 2021}
 		\begin{itemize}
-			\item Junior Python/Go backend developer \timestamp{since June 2022}
-			\item Intern Python/Go backend developer \timestamp{December 2021 - June 2022}
+			\item Middle Python/Go backend developer \timestamp{since May 2023}
+			\item Junior Python/Go backend developer \timestamp{June 2022 --- May 2023}
+			\item Intern Python/Go backend developer \timestamp{December 2021 --- June 2022}
 		\end{itemize}
     \end{rSection}
 	
 	\begin{rSection}{Interests and Skills}
 		\begin{tabular}{@{} >{\bfseries}l @{\hspace{6ex}} l }
 			Spoken languages & fluent in English and Russian, beginner in French \\
-			Programming languages & Go, Python (numpy, matplotlib, astropy), C++\\
+			Programming languages & Go, Python (\texttt{numpy}, \texttt{matplotlib}, \texttt{astropy}), C++\\
 			\longversion{IDEs & VSCode, GoLand, DataGrip \\}
 			Software & LaTeX, Git, GitHub Actions, Docker, Unix, AWS SQS
 		\end{tabular}
@@ -80,9 +78,9 @@
 
 		\subheader{Online courses}
 		\begin{itemize}
-			\item Machine learning in applied tasks \textit{from MSU}. \timestamp{September - December 2022}
+			\item Machine learning in applied tasks \textit{from MSU}. \timestamp{September --- December 2022}
 			\item \link{https://coursera.org/share/d2d0be1f1b9f3e71fc36ca28fb12976f}{Version control with Git} \textit{from Atlassian} \timestamp{May 2020}
-			\item The skill of development in modern C++ \textit{from MIPT \& Yandex}. \timestamp{January - March 2020}
+			\item The skill of development in modern C++ \textit{from MIPT \& Yandex}. \timestamp{January --- March 2020}
 
 			\link{https://coursera.org/share/9ae4ca0b1b59871cd100cd8ffb3d181d}{White belt}, \link{https://coursera.org/share/ef873d3813da5cd7eed359eb3126222e}{Yellow belt}
 		\end{itemize}
@@ -91,7 +89,7 @@
 	\begin{rSection}{Science}
 		\longversion{
 			\note{
-				Worked with different scientific Python packages such as numpy, scipy, matplotlib, pandas and astropy. 
+				Worked with different scientific Python packages such as \texttt{numpy}, \texttt{scipy}, \texttt{matplotlib}, pandas and \texttt{astropy}. 
 				Have a lot of experience with LaTeX and Unix.
 			}
 		}
@@ -117,7 +115,7 @@
 
 			\subheader{Conferences}
 			\begin{itemize}
-				\item Physics of Space 2023, Ekaterinburg \timestamp{January - February 2023}
+				\item Physics of Space 2023, Ekaterinburg \timestamp{January --- February 2023}
 				
 				Presentation: \link{https://www.overleaf.com/read/mnwwgvkqxdky}{Russian version}
 				\item High Energy Astrophysics today and tomorrow 2022, Moscow \timestamp{December 2022}
