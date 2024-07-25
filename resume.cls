@@ -25,8 +25,12 @@
 \usepackage[parfill]{parskip} % Remove paragraph indentation
 \usepackage{array} % Required for boldface (\bf and \bfseries) tabular columns
 \usepackage{ifthen} % Required for ifthenelse statements
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
 
 \pagestyle{empty} % Suppress page numbers
+
+\newcommand{\timestamp}[1]{\hfill {\small \textbf{#1}}}
 
 %----------------------------------------------------------------------------------------
 %	HEADINGS COMMANDS: Commands for printing name and address
@@ -94,8 +98,7 @@
 
 % Defines the rSection environment for the large sections within the CV
 \newenvironment{rSection}[1]{ % 1 input argument - section name
-  \sectionskip
-  \MakeUppercase{\bf #1} % Section title
+  \MakeUppercase{{\bf #1}} % Section title
   \sectionlineskip
   \hrule % Horizontal line
   \begin{list}{}{ % List for each individual item in the section
@@ -109,18 +112,23 @@
 %----------------------------------------------------------------------------------------
 %	WORK EXPERIENCE FORMATTING
 %----------------------------------------------------------------------------------------
+\newcommand{\rSubsectionHeader}[3]{
+  \ifthenelse{\equal{#1}{}}{}{
+    \raisebox{-0.33em}{\includegraphics[width=1.5em]{#1}}
+  }
+  \textbf{#2} \timestamp{#3}
+}
 
-\newenvironment{rSubsection}[4]{ % 4 input arguments - company name, year(s) employed, job title and location
- {\bf #1} \hfill {#2} % Bold company name and date on the right
- \ifthenelse{\equal{#3}{}}{}{ % If the third argument is not specified, don't print the job title and location line
+\newenvironment{rSubsection}[5]{ % 5 input arguments - company name, year(s) employed, job title and location and company logo
+  \rSubsectionHeader{#5}{#1}{#2}
+  \ifthenelse{\equal{#3}{}}{}{ % If the third argument is not specified, don't print the job title and location line
   \\
   {\em #3} \hfill {\em #4} % Italic job title and location
   }\smallskip
-  \begin{list}{$\cdot$}{\leftmargin=0em} % \cdot used for bullets, no indentation
+  \begin{list}{--}{\leftmargin=1.5em}
    \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
   }{
   \end{list}
-  \vspace{0.5em} % Some space after the list of bullet points
 }
 
 % The below commands define the whitespace after certain things in the document - they can be \smallskip, \medskip or \bigskip
@@ -128,4 +136,4 @@
 \def\addressskip{\smallskip} % The space between the two address (or phone/email) lines
 \def\sectionlineskip{\medskip} % The space above the horizontal line for each section 
 \def\nameskip{\bigskip} % The space after your name at the top
-\def\sectionskip{\medskip} % The space after the heading section
+\def\sectionskip{\smallskip} % The space after the heading section

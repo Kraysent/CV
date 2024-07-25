@@ -1,6 +1,8 @@
 Source code of my CV.
 
-To compile just use 
+To download latest version see [Releases page](https://github.com/Kraysent/CV/releases/latest).
+
+To compile use 
 
 ```bash
 make
@@ -14,5 +16,3 @@ To compile them separately use
 make short
 make long
 ```
-
-You can also simply download compiled files from "Releases" page of this repo.

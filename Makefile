@@ -7,3 +7,6 @@ short:
 
 long:
 	pdflatex --jobname=cv '\newcommand*{\LONG}{} \input{CV}'
+
+clean:
+	rm *.aux *.fls *.log cv.pdf resume.pdf *.out *.synctex.gz *.fdb_latexmk

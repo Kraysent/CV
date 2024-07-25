@@ -1,111 +1,107 @@
 \documentclass{resume} % include resume.cls file
 \usepackage[unicode, pdftex]{hyperref}
 \usepackage{xcolor}
-\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry}
+\usepackage[left=0.4in,top=0.4in,right=0.4in,bottom=0.3in]{geometry}
 \usepackage{enumitem}
 \usepackage{courier}
 
 \newcommand{\link}[2]{\href{#1}{\textcolor{blue}{\underline{#2}}}}
-\newcommand{\subheader}[1]{\textbf{\textit{#1}}}
-\newcommand{\timestamp}[1]{\hfill {\small \textbf{#1}}}
-\newcommand{\datedsubheader}[2]{\textbf{\textit{#1}} \timestamp{#2}}
+\newcommand{\subheader}[2]{
+	{\textbf{#1}} \ifthenelse{\equal{#2}{}}{}{\timestamp{#2}}
+}
 \newcommand{\longversion}[1]{\ifdefined\LONG#1\fi}
-\newcommand{\note}[1]{\textcolor{gray}{#1}}
+
+\renewcommand{\labelitemi}{$\circ$}
 
 \setlist[itemize]{nosep,topsep=-8pt}
 \name{Artyom Zaporozhets}
 
-
 \begin{document}
 	\textit{Middle backend developer @ Yandex N.V.} \\
-	\textit{Student @ Sternberg astronomical institute, Moscow, Russia} 
+	\textit{Student @ Sternberg astronomical institute, Moscow} 
 
 	\begin{rSection}{General}
 		\begin{tabular}{@{} >{\bfseries}l @{\hspace{6ex}} l }
-			Email & zaporozhetc.aa19@physics.msu.ru \\
-			GitHub & \link{https://github.com/Kraysent}{@Kraysent} \\
-			Telegram & \link{https://t.me/kraysent}{@kraysent}
+			Email & kraysent@gmail.com \\
+			GitHub & \link{https://github.com/Kraysent}{https://github.com/Kraysent}
 		\end{tabular}
 
 		\begin{tabular}{@{} >{\bfseries}l @{\hspace{6ex}} l }
-			Born & November 16, 2001 (21 y.o.) \\
-			Citizenship & Russian Federation \\
+			Born & November 16, 2001 (22 y.o.) \\
+			Location & Russian Federation \\
 		\end{tabular}
-	\end{rSection}		
+	\end{rSection}
 
 	\begin{rSection}{Education}
-		\datedsubheader{Lomonosov Moscow State University}{September 2019 --- May 2025}
-		\\ Physics Fac., Astronomy Dept, Sternberg astronomical institute
-		\begin{itemize}
-			\item Master of Science
-		\end{itemize}
-
-		\vspace{1em}
-
-		\datedsubheader{Traektoria foundation, Astrophysics school}{August 2016 --- August 2019}
+		\begin{rSubsection}{Lomonosov Moscow State University}{September 2019 --- May 2025}{}{}{msu}
+			\item \subheader{Master of Science}{}
+			\begin{itemize}
+				\item Physics Faculty, Astronomy Dept, Sternberg astronomical institute
+			\end{itemize}
+		\end{rSubsection}
 
 		\longversion{
-			\datedsubheader{33 Lyceum, Rostov-on-Don, Russia}{September 2008 --- June 2019}
-			\\ \note{In-depth study of mathematics \& physics}
+			\rSubsectionHeader{traektoria}{Traektoria foundation, Astrophysics school}{August 2016 --- August 2019}
+
+			\rSubsectionHeader{school}{33 Lyceum, Rostov-on-Don, Russia}{September 2008 --- June 2019}
 		}
 	\end{rSection}
-	
+
 	\begin{rSection}{Work experience}
-		\datedsubheader{Yandex N.V., FinOps division, billing systems}{since December 2021}
-		\begin{itemize}
-			\item Middle Python/Go backend developer \timestamp{since May 2023}
-			\item Junior Python/Go backend developer \timestamp{June 2022 --- May 2023}
-			\item Intern Python/Go backend developer \timestamp{December 2021 --- June 2022}
-		\end{itemize}
-		\longversion{
-			\note{
-				Projects included but were not limited to:
-				\begin{itemize}
-					\item Grafana dashboard templating engine.
-					\item Initialising the infrastructure (balancers, DBs, Kafka queues, etc.) for the 10+ microservices in cloud.
-					\item Service for the automated configuration of the billing platform (10+ microservices) for new clients.
-					\item Cashback platform (Yandex Pay) stabilisation that allowed more flexibility for cashback product ideas.
-				\end{itemize}
-				In general, worked with a significant number of SOX compliant Go microservices and participated both in their development and infrastructure support.
-			}
-		}
-
-		\vspace{1em}
-
-		\datedsubheader{Traektoria foundation, Astrophysics school}{August 2020 --- August 2023}
-		\begin{itemize}
-			\item Tutor
-		\end{itemize}
-		\longversion{
-			\note{Worked with 14--18 y.o. students who learned math, physics, astronomy and programming.
-			Assisted teachers with the lectures, helped students with the studying material and communications with each other and teachers.}
-		}
-    \end{rSection}
-	
-	\begin{rSection}{Personal projects}
-		\subheader{Programming projects}
-		\begin{itemize}
-			\item \link{https://github.com/Kraysent/Documents}{Simple document storage}, Go \& React \timestamp{since October 2023}
-			\item \link{https://github.com/Kraysent/OMTool}{Galaxy evolution modeling tool}, Python \timestamp{June 2021 - January 2023}
-			\item \link{https://github.com/Kraysent/XBodyModel}{Numerical model of N-body task}, Rust \timestamp{2020}
-			\item \link{https://github.com/Kraysent/Gravity-Model}{Numerical model of N-body task}, C\# \timestamp{2019}
-		\end{itemize}
-
-		\vspace{1em}
-
-		\subheader{Science publication}
-		\begin{itemize}
-			\item Random Sky Radio Sources, A.A.Zaporozhets, O.V.Verkhodanov \timestamp{2019}
-		
-			Astrophysical Bulletin, vol. 74, p. 265 (\link{http://www.sao.ru/Doc-k8/Science/Public/Bulletin/Vol74/N3/ASPB265.pdf}{Russian version})
-		\end{itemize}
-
-		\vspace{1em}
+		\begin{rSubsection}{Yandex N.V., FinTech division}{since December 2021}{}{}{yandex}
+			\item \subheader{Middle Go/Python backend developer}{since May 2023}
+			\begin{itemize}
+				\item Backend feature lead for Yandex Pay loyalty project. Launched a backend that allowed users to choose cashback offers from a selector each month with 100s of requests per second. Managed two people as a part of the project. Communicated with product managers, frontend and backend developers from adjacent services.
+				\item Stabilized Yandex Pay accrual platform to allow faster and easier implementation of product ideas for cashback loyalty programs. Implemented regular payments data reconciliation. Mentored an intern.
+				\item Implemented asynchronous export of receipt data from Oracle monolith database to PostgreSQL database inside the microservice with Kafka queue as intermediate that allowed for more fault tolerant access to and export of this data.
+			\end{itemize}
+			\item \subheader{Junior Go/Python backend developer}{June 2022 --- May 2023}
+			\begin{itemize}
+				\item Implemented service for the automated configuration of 10 microservices that allowed for much faster ``product idea'' --- ``change in configuration'' cycle.
+				\item Initialized the infrastructure (balancers, DBs, Kafka queues, etc.) for 10 SOX-compliant microservices in Yandex Cloud to create a new environment for the clients of the platform to integrate to.
+			\end{itemize}
+			\item \subheader{Intern Go/Python backend developer}{December 2021 --- June 2022}
+			\begin{itemize}
+				\item Added asynchronous SQS tasks support to a microservice that allowed it to interact with internal services such as task tracker and S3 storage.
+				\item Implemented templating engine for dashboards in Grafana to allow standardized creation of similar runtime monitoring dashboards for different services.
+			\end{itemize}
+		\end{rSubsection}
 
 		\longversion{
 			\vspace{1em}
 
-			\subheader{Conferences}
+			\begin{rSubsection}{Traektoria foundation (NGO), Astrophysics school}{August 2020 --- August 2023}{}{}{traektoria}
+				\item \subheader{Tutor}{}
+				\begin{itemize}
+					\item Worked with 14--18 y.o.\ students who learned math, physics, astronomy and programming. Assisted teachers with the lectures. Helped students with the studying material and communications with each other and teachers.
+				\end{itemize}
+			\end{rSubsection}
+		}
+    \end{rSection}
+	
+	\begin{rSection}{Personal projects}
+		\subheader{Programming projects}{}
+		\begin{itemize}
+			\item \link{https://github.com/HyperLEDA/db-app}{Backend for the database of extragalactic objects}, Python \timestamp{2024}
+			\item \link{https://github.com/Kraysent/Documents}{Simple document storage}, Go \& React \timestamp{2023}
+			\item \link{https://github.com/Kraysent/OMTool}{Galaxy evolution modeling tool}, Python \timestamp{2021 --- 2023}
+		\end{itemize}
+
+		\vspace{1em}
+
+		\longversion{
+			\subheader{Scientific publication}{}
+			\begin{itemize}
+				\item Random Sky Radio Sources, A.A.Zaporozhets, O.V.Verkhodanov \timestamp{2019}
+			
+				Astrophysical Bulletin, vol. 74, p. 265 (\link{http://www.sao.ru/Doc-k8/Science/Public/Bulletin/Vol74/N3/ASPB265.pdf}{Russian version})
+			\end{itemize}
+
+			\vspace{1em}
+
+			\vspace{1em}
+
+			\subheader{Conferences}{}
 			\begin{itemize}
 				\item Physics of Space 2023, Ekaterinburg \timestamp{January --- February 2023}
 				
@@ -120,25 +116,27 @@
 	\begin{rSection}{Interests and Skills}
 		\begin{tabular}{@{} >{\bfseries}l @{\hspace{6ex}} l }
 			Spoken languages & fluent in English and Russian, beginner in French \\
-			Programming languages & Go, Python (\texttt{numpy}, \texttt{matplotlib}, \texttt{pandas}, etc.), C++\\
+			Devtools \& Software & Git, GitHub, Docker, Kafka, SQS, Grafana, Terraform, Yandex Cloud\\
+			Programming languages & Go, Python (data analysis), Terraform, TeX, some Rust and C++\\
 			\longversion{IDEs & VSCode, GoLand, DataGrip \\}
-			Software & LaTeX, Git, GitHub Actions, Docker, Unix, AWS SQS
 		\end{tabular}
 
-		\subheader{Language Exam Results}
-		\begin{itemize}
-			\item First Cambridge English, B2 \timestamp{2019}
-		\end{itemize}
+		\longversion{
+			\subheader{Language Exams}{}
+			\begin{itemize}
+				\item First Cambridge English, B2 \timestamp{2019}
+			\end{itemize}
 
-		\vspace{1em}
+			\vspace{1em}
 
-		\subheader{Online courses}
-		\begin{itemize}
-			\item Machine learning in applied tasks \textit{from MSU}. \timestamp{September --- December 2022}
-			\item \link{https://coursera.org/share/d2d0be1f1b9f3e71fc36ca28fb12976f}{Version control with Git} \textit{from Atlassian} \timestamp{May 2020}
-			\item The skill of development in modern C++ \textit{from MIPT \& Yandex}. \timestamp{January --- March 2020}
+			\subheader{Online courses}{}
+			\begin{itemize}
+				\item Machine learning in applied tasks \textit{from MSU}.\ \timestamp{September --- December 2022}
+				\item \link{https://coursera.org/share/d2d0be1f1b9f3e71fc36ca28fb12976f}{Version control with Git} \textit{from Atlassian} \timestamp{May 2020}
+				\item The skill of development in modern C++ \textit{from MIPT \& Yandex}.\ \timestamp{January --- March 2020}
 
-			\link{https://coursera.org/share/9ae4ca0b1b59871cd100cd8ffb3d181d}{White belt}, \link{https://coursera.org/share/ef873d3813da5cd7eed359eb3126222e}{Yellow belt}
-		\end{itemize}
+				\link{https://coursera.org/share/9ae4ca0b1b59871cd100cd8ffb3d181d}{White belt}, \link{https://coursera.org/share/ef873d3813da5cd7eed359eb3126222e}{Yellow belt}
+			\end{itemize}
+		}
 	\end{rSection}
 \end{document}
