@@ -17,20 +17,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Build resume
-        run: |
-          make short
-
       - name: Build CV
         run: |
-          make long
+          make
 
-      - name: Upload PDFs
+      - name: Upload PDF
         uses: actions/upload-artifact@v4
         with:
           name: release
           path: |
-            resume.pdf
             cv.pdf
 
   release:
@@ -73,5 +68,4 @@ jobs:
           draft: false
           prerelease: false
           files: |
-            ./artifacts/resume.pdf
             ./artifacts/cv.pdf
