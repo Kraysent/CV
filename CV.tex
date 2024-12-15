@@ -4,6 +4,7 @@
 \usepackage[left=0.4in,top=0.4in,right=0.4in,bottom=0.3in]{geometry}
 \usepackage{enumitem}
 \usepackage{courier}
+\usepackage{ifthen}
 
 \newcommand{\link}[2]{\href{#1}{\textcolor{blue}{\underline{#2}}}}
 \newcommand{\subheader}[2]{
@@ -11,6 +12,13 @@
 }
 
 \renewcommand{\labelitemi}{$\circ$}
+
+\newboolean{hideWorkExperience}
+\ifdefined\hideWorkExperience
+    \setboolean{hideWorkExperience}{true}
+\else
+    \setboolean{hideWorkExperience}{false}
+\fi
 
 \setlist[itemize]{nosep,topsep=-8pt}
 \name{Artyom Zaporozhets}
@@ -68,6 +76,7 @@
 			\item \textbf{Programming project}: \link{https://github.com/Kraysent/OMTool}{Galaxy evolution modeling tool}, Python \timestamp{2022 --- 2023}
 		\end{rSubsection}
 
+
 		\begin{rSubsection}{Computation of the cloudiness of the sky using infrared camera}{2021}{}{}{}
 			\item Implemented an algorithm to calculate the percentage of cloudiness and fogginess of the sky. The algorithm used pictures from infra-red camera in Caucasian Mountain Observatory to calculate these values in real time.
 			\item \textbf{Programming project}: \link{https://github.com/Kraysent/cloudiness}{Cloudiness algorithm}, Python \timestamp{July 2021}
@@ -93,27 +102,35 @@
 			\end{itemize}
 		\end{rSubsection}
 
-		\begin{rSubsection}{Yandex, FinTech division}{since December 2021}{}{}{yandex}
+		\begin{rSubsection}{Yandex, FinTech division, Yandex Bank loyalty}{since December 2021}{}{}{yandex}
 			\item \subheader{Backend team lead}{since September 2024}
-			\begin{itemize}
-				\item Managed up to 4 people. Developed a backend of a loyalty project including selection of cashback categories, personalization of these categories, a number of product requirements and features that span over multiple teams.
-			\end{itemize}
+			\ifthenelse{\boolean{hideWorkExperience}}{}{
+				\begin{itemize}
+					\item Managed up to 4 people. Developed the backend of a loyalty project, including selection of cashback categories, personalization of those categories, and a number of product requirements and features that spanned multiple teams.
+				\end{itemize}
+			}
 			\item \subheader{Middle Go/Python backend developer}{May 2023 - September 2024}
-			\begin{itemize}
-				\item Backend feature lead for Yandex Pay loyalty project. Launched a backend that allowed users to choose cashback offers for each month with 100s of requests per second. Managed two people as a part of the project. Communicated with product managers, frontend and backend developers from adjacent services.
-				\item Stabilized Yandex Pay accrual platform to allow faster and easier implementation of product ideas for cashback loyalty programs. Implemented regular payments data reconciliation. Mentored an intern.
-				\item Implemented asynchronous export of receipt data from Oracle monolith database to PostgreSQL database inside the microservice with Kafka queue as intermediate that allowed for more fault tolerant access to and export of this data.
-			\end{itemize}
+			\ifthenelse{\boolean{hideWorkExperience}}{}{
+				\begin{itemize}
+					\item Backend feature lead for Yandex Pay loyalty project. Launched a backend that allowed users to choose cashback offers for each month with 100s of requests per second. Managed two people as a part of the project. Communicated with product managers, frontend and backend developers from adjacent services.
+					\item Stabilized Yandex Pay accrual platform to allow faster and easier implementation of product ideas for cashback loyalty programs. Implemented regular payments data reconciliation. Mentored an intern.
+					\item Implemented asynchronous export of receipt data from Oracle monolith database to PostgreSQL database inside the microservice with Kafka queue as intermediate that allowed for more fault tolerant access to and export of this data.
+				\end{itemize}
+			}
 			\item \subheader{Junior Go/Python backend developer}{June 2022 --- May 2023}
-			\begin{itemize}
-				\item Implemented service for the automated configuration of 10 microservices that allowed for much faster ``product idea'' --- ``change in configuration'' cycle.
-				\item Initialized the infrastructure (balancers, DBs, Kafka queues, etc.) for 10 SOX-compliant microservices in Yandex Cloud to create a new environment for the clients of the platform to integrate to.
-			\end{itemize}
+			\ifthenelse{\boolean{hideWorkExperience}}{}{
+				\begin{itemize}
+					\item Implemented service for the automated configuration of 10 microservices that allowed for much faster ``product idea'' --- ``change in configuration'' cycle.
+					\item Initialized the infrastructure (balancers, DBs, Kafka queues, etc.) for 10 SOX-compliant microservices in Yandex Cloud to create a new environment for the clients of the platform to integrate to.
+				\end{itemize}
+			}
 			\item \subheader{Intern Go/Python backend developer}{December 2021 --- June 2022}
-			\begin{itemize}
-				\item Added asynchronous SQS tasks support to a microservice that allowed it to interact with internal services such as task tracker and S3 storage.
-				\item Implemented templating engine for dashboards in Grafana to allow standardized creation of similar runtime monitoring dashboards for different services.
-			\end{itemize}
+			\ifthenelse{\boolean{hideWorkExperience}}{}{
+				\begin{itemize}
+					\item Added asynchronous SQS tasks support to a microservice that allowed it to interact with internal services such as task tracker and S3 storage.
+					\item Implemented templating engine for dashboards in Grafana to allow standardized creation of similar runtime monitoring dashboards for different services.
+				\end{itemize}
+			}
 		\end{rSubsection}
 
 		\vspace{1em}
@@ -130,7 +147,7 @@
 		\begin{tabular}{@{} >{\bfseries}l @{\hspace{6ex}} l }
 			Spoken languages & fluent in English and Russian, beginner in French \\
 			Devtools \& Software & Git, GitHub, Docker, Kafka, SQS, Grafana, Terraform, Yandex Cloud\\
-			Programming languages & Go, Python, Bash, some Rust and C++\\
+			Programming languages & Python, Go, Bash, some Rust and C++\\
 		\end{tabular}
 
 		\subheader{Language Exams}{}
